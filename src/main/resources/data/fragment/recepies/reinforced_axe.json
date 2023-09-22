@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_sword"
+    },
+    "X": {
+      "item": "fragment:stareech"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ]
+  "result": {
+    "item": "minecraft:diamond_axe"
+  }
+}

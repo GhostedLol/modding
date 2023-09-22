@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 500,
+  "experience": 10,
+  "ingredient": {
+    "item": "fragment:stareech"
+  },
+  "result": "fragment:stareech_ingot"
+}

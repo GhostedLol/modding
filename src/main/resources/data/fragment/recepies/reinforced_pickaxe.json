@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "X": {
+      "item": "fragment:stareech"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ]
+  "result": {
+    "item": "fragment:reinforced_pickaxe"
+  },
