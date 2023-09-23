@@ -1,6 +1,9 @@
 package net.ghosted.fragment.datagen;
 
+import net.ghosted.fragment.block.ModBlocks;
 import net.ghosted.fragment.fragment;
+import net.ghosted.fragment.item.ModItems;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -21,18 +24,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALEXANDRITE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STAREECH_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
                 .define('A', ModItems.STAREECH_INGOT.get())
-                .unlockedBy("has_stareech_ingot", inventoryTrigger(ItemPredicate.Builder.item().
-                        of(ModItems.ALEXANDRITE.get()).build()))
+                .unlockedBy("has_stareech", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModItems.STAREECH_INGOT.get()).build()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STAREECH.get(), 9)
+                .requires(ModBlocks.STAREECH_BLOCK.get())
+                .unlockedBy("has_stareech_block", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.STAREECH_BLOCK.get()).build()))
+                .save(pWriter);
 
-    protected static void oreSmelting;
-        (Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
+    }
+
+    protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
                                       float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult,
                 pExperience, pCookingTIme, pGroup, "_from_smelting");
@@ -49,7 +58,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         for(ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime,
                             pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(pFinishedRecipeConsumer, MCCourseMod.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+                    .save(pFinishedRecipeConsumer, fragment.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
     }
 

@@ -1,6 +1,5 @@
 package net.ghosted.fragment.item;
 
-import net.ghosted.fragment.fragment;
 import net.ghosted.fragment.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;

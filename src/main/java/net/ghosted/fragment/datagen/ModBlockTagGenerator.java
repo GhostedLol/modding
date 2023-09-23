@@ -1,6 +1,5 @@
 package net.ghosted.fragment.datagen;
 
-import net.ghosted.fragment.fragment;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.BlockTagsProvider;

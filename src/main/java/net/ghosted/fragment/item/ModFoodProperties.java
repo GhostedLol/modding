@@ -5,8 +5,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class ModFoodProperties {
-    public static final FoodProperties HASTER = new FoodProperties.Builder().nutrition(10)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 14400000),1f).build();
-
+    public static final FoodProperties HASTER = new FoodProperties.Builder().nutrition(3).saturationMod(0.25f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 999999999), 1f).build();
 
 }

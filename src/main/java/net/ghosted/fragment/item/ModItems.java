@@ -1,7 +1,5 @@
 package net.ghosted.fragment.item;
 
-import com.google.common.collect.AbstractListMultimap;
-import net.ghosted.fragment.fragment;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,7 +15,7 @@ public class ModItems {
     public static final RegistryObject<Item> STAREECH_INGOT = ITEMS.register("stareech_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HASTER = ITEMS.register("haster",
-            () -> new Item(new Item.Properties(.food(ModFoodProperties.HASTER)));
+            () -> new Item(new Item.Properties().food(ModFoodProperties.HASTER)));
 
 
     public static final RegistryObject<Item> REINFORCED_SWORD = ITEMS.register("reinforced_sword",
@@ -32,6 +30,6 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.REINFORCED, 1, 5, new Item.Properties().durability(10000)));
 
     public static void register(IEventBus eventBus) {
-              ITEMS.register(eventBus);
-          }
+        ITEMS.register(eventBus);
+    }
 }

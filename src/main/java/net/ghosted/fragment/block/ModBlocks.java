@@ -1,6 +1,5 @@
 package net.ghosted.fragment.block;
 
-import net.ghosted.fragment.fragment;
 import net.ghosted.fragment.item.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
